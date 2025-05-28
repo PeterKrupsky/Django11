@@ -1,15 +1,15 @@
+
+
 from pathlib import Path
-import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure-)wgx)3x(wrs4%=(*^)cw6rps*t*#98dd(l%r#o8ktg$^+lpuy8'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['Petr222.pythonanywhere.com']
-
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -92,8 +92,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/home/Petr222/Django11/staticfiles'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
