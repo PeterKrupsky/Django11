@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Форма{% endblock %}
+
+{% block content %}
+<div class="section">
+    
+    <div class="header-box">
+        <h1 class="glow-text">Форма 2 </h1>
+        <p class="sub-info">Укажите интересующие вас сведения ниже</p>
+    </div>
+    <p> Форма принимает фразы:
+        <ul>
+            <li>Обо мне</li>
+            <li>О моей программе</li>
+            <li>О моем руководителе</li>
+            <li>О моем сокурснике</li>
+        </ul>
+    </p>
+    <div class="form-wrapper">
+        <form action="{% url 'one_app:program_form' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="form-block">
+                {{ form }}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="primary-btn">
+                    Отправить
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

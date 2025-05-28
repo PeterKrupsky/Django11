@@ -1,0 +1,17 @@
+<ul class="nav-menu">
+    <li>
+        <a class="nav-link {% if request.resolver_match.url_name == 'me_form' %}active{% endif %}" href="{% url 'one_app:me_form' %}">Форма вид 1</a>
+    </li>
+    <li>
+        <a class="nav-link {% if request.resolver_match.url_name == 'program_form' %}active{% endif %}" href="{% url 'one_app:program_form' %}">Форма вид 2</a>
+    </li>
+    <li>
+        <a class="nav-link {% if request.resolver_match.url_name == 'manager_form' %}active{% endif %}" href="{% url 'one_app:manager_form' %}">Форма вид 3</a>
+    </li>
+    <li>
+        <a class="nav-link {% if request.resolver_match.url_name == 'result' %}active{% endif %}" href="{% url 'one_app:result' %}">Результаты</a>
+    </li>
+    <li>
+        <a class="nav-link {% if request.resolver_match.url_name == 'table' %}active{% endif %}" href="{% url 'one_app:table' %}">Таблица</a>
+    </li>
+</ul>

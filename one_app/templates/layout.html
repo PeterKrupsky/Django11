@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    <link href="{% static 'css/gogostyle.css' %}" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="section fade-in">
+        <h1>Я и моя программа</h1>
+        <p class="section__text">Добро пожаловать на мою страничку! <br> Тут вы найдете информацию обо мне и моей программе</p>
+    </header>
+
+    <nav class="nav card">
+        {% include "navigation.html" %}
+    </nav>
+
+    <section class="section fade-in body">
+        {% block content %}{% endblock %}
+    </section>
+
+    <footer class="section" style="text-align: center;">
+        <p class="section__text">Конец страницы</p>
+    </footer>
+</div>
+
+</body>
+</html>

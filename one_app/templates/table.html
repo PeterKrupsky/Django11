@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block title %}Аналитическая таблица{% endblock %}
+
+{% block content %}
+<div class="section">
+
+    <div class="message-box">
+        <h2 class="highlight-text">
+            Сводный отчёт успешно сформирован
+        </h2>
+    </div>
+
+    <div class="result-block">
+        <h1 class="glow-text">Результаты анализа</h1>
+        <p class="sub-info">Общая таблица значений по запросу:</p>
+
+        <div class="data-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        {% for name in name_list %}
+                            <th>{{ name }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in objects_values %}
+                        <tr>
+                            {% for key, value in object.items %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="filter-block">
+        <h2 class="glow-text">Фильтрация и сортировка</h2>
+        <div class="data-wrapper">
+            <table class="data-table alt">
+                <thead>
+                    <tr>
+                        {% for name in verbose_name_list %}
+                            <th>{{ name }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for objects_values in objects_values_list %}
+                        <tr>
+                            {% for item in objects_values %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="stat-block">
+        <h2 class="glow-text">Статистика</h2>
+        <div class="stat-list">
+            {% for item in statics.statics_val %}
+                <ul>
+                    {% for k, v in item.items %}
+                        <li><strong>{{ k }}</strong>: {{ v }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

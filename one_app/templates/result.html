@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Результат{% endblock %}
+
+{% block content %}
+<div class="section">
+
+    <div class="message-box">
+        <h2 class="highlight-text">
+            Финальные данные успешно обработаны
+        </h2>
+    </div>
+
+    <div class="result-block">
+        <h1 class="glow-text">Результат</h1>
+        <p class="sub-info">Ниже представлены переданные значения и итог обработки.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Поле</th>
+                    <th>Ввод</th>
+                    <th>Итог</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for item in last_values %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                    <td><strong>{{ result }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
