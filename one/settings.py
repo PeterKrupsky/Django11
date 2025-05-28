@@ -11,7 +11,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['Petr222.pythonanywhere.com']
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <--- добавь эту строку
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
